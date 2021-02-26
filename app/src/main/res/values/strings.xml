@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CIS4280Assignment1</string>
+    <string name="orderAPizza">Order a Pizza!</string>
+    <string name="toppingsLabel">Toppings</string>
+</resources>
