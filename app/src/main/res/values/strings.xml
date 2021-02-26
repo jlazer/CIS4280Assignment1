@@ -13,4 +13,5 @@
     <string name="sizeRadioButton3">Large</string>
     <string name="sizeLabel">Size</string>
     <string name="button1">Next</string>
+    <string name="edit_message">Enter a message</string>
 </resources>
