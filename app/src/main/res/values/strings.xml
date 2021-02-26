@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">CIS4280Assignment1</string>
-    <string name="orderAPizza">Order a Pizza!</string>
+    <string name="orderAPizzaLabel">Order a Pizza!</string>
     <string name="toppingsLabel">Toppings</string>
+    <string name="checkbox1">Pepperoni</string>
+    <string name="checkbox2">Chicken</string>
+    <string name="checkbox3">Mushroom</string>
+    <string name="checkbox4">Green Pepper</string>
+    <string name="checkbox5">Olive</string>
+    <string name="checkbox6">Extra cheese</string>
+    <string name="sizeRadioButton1">Small</string>
+    <string name="sizeRadioButton2">Medium</string>
+    <string name="sizeRadioButton3">Large</string>
+    <string name="sizeLabel">Size</string>
+    <string name="button1">Next</string>
 </resources>
