@@ -14,4 +14,5 @@
     <string name="sizeLabel">Size</string>
     <string name="button1">Next</string>
     <string name="edit_message">Enter a message</string>
+    <string name="textview">Please enter order details below:</string>
 </resources>

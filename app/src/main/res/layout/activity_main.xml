@@ -51,36 +51,39 @@
                 android:text="@string/checkbox1"
                 android:onClick="onCheckboxClicked"/>
 
-
             <CheckBox
-                android:id="@+id/checkBox11"
+                android:id="@+id/checkBoxChicken"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox4" />
-
+                android:text="@string/checkbox2"
+                android:onClick="onCheckboxClicked"/>
             <CheckBox
-                android:id="@+id/checkBox13"
+                android:id="@+id/checkBoxMushroom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox6" />
+                android:text="@string/checkbox3"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
-                android:id="@+id/checkBox12"
+                android:id="@+id/checkBoxGreenPepper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox5" />
+                android:text="@string/checkbox4"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
-                android:id="@+id/checkBox10"
+                android:id="@+id/checkBoxOlive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox3" />
+                android:text="@string/checkbox5"
+                android:onClick="onCheckboxClicked"/>
 
             <CheckBox
-                android:id="@+id/checkBox9"
+                android:id="@+id/checkBoxExtraCheese"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox2" />
+                android:text="@string/checkbox6"
+                android:onClick="onCheckboxClicked"/>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,19 +107,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/smallPizzaRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sizeRadioButton1" />
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/mediumPizzaRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sizeRadioButton2" />
 
                 <RadioButton
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/largePizzaRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sizeRadioButton3" />

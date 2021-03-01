@@ -15,10 +15,18 @@ public class customerPage extends AppCompatActivity {
 
         // Get the Intent that Started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        //int checked;
+        int pizzaSizeInt = intent.getIntExtra("checked",0);
+        System.out.println("We are on the customer page!");
+        System.out.println(pizzaSizeInt);
+
+
+
 
         //Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView4);
-        textView.setText(message);
+        //TextView textView = findViewById(R.id.textView4);
+        //textView.setText(message);
     }
 }
