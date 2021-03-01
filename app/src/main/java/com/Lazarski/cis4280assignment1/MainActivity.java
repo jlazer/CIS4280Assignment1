@@ -28,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
     //private RadioGroup pizzaSizeRadioGroup;
     private OrderDetails orderDetailsInstance = new OrderDetails();
 
-    // setting distinct id's to the radiobuttons.
-    //private static final int radioButton1
-
+    // Initializing pizza size string
     private String size = "";
 
 
@@ -86,13 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-        // Prints to console the value of the checked radio button.
-        //System.out.println(rgChecked);
-
-        // Prints to console the boolean value of what checkboxes are checked
-        //System.out.println("pepperoni: " + toppingCheckbox1.isChecked());
-
         // Setting the toppings of the pizza in the orderDetails instance to the boolean value of the corresponding topping object.
         orderDetailsInstance.setPepperoni(toppingCheckbox1.isChecked());
         orderDetailsInstance.setChicken(toppingCheckbox2.isChecked());
@@ -102,10 +93,15 @@ public class MainActivity extends AppCompatActivity {
         orderDetailsInstance.setExtraCheese(toppingCheckbox6.isChecked());
 
 
+        // Prints to console the boolean value of the pepperoni attribute of the orderDetails object
         System.out.println("Pepperoni: " + orderDetailsInstance.getPepperoni());
 
         Intent intent = new Intent(this, customerPage.class);
-        intent.putExtra("checked", rgChecked);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("serializable", orderDetailsInstance);
+        intent.putExtras(bundle);
+        //intent.putExtra("checked", rgChecked);
+        //intent.putExtra("OrderDetails", orderDetailsInstance);
 
 
         System.out.println("Button Click");

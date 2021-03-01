@@ -15,4 +15,7 @@
     <string name="button1">Next</string>
     <string name="edit_message">Enter a message</string>
     <string name="textview">Please enter order details below:</string>
+    <string name="submitStr">Submit Order</string>
+    <string name="textViewOutput" />
+    <string name="name" />
 </resources>

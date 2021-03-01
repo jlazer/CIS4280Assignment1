@@ -1,30 +1,37 @@
 package com.Lazarski.cis4280assignment1;
 
+import java.io.Serializable;
+
 public class OrderDetails implements java.io.Serializable {
 
     private String customerName = "";
-    private int customerPhone;
+    private long customerPhone = 0;
     private String customerEmail = "";
     private String customerAddress = "";
 
     private String pizzaSize = "";
 
     private boolean pepperoni;
-
-    //private String pepperoni = "";
     private boolean chicken;
     private boolean mushroom;
     private boolean greenPepper;
     private boolean olive;
     private boolean extraCheese;
+    private int numberOfToppings = 0;
 
 
     //private String[] toppingsArray = {"Pepperoni", "Chicken", "Mushroom", "Green Pepper", "Olive", "Extra Cheese"};
 
     // No parameter constructor
     public OrderDetails() {
-        //todo add setter method for initial values
+
     }
+
+    public OrderDetails(String pizzaSize, int numberOfToppings ) {
+        setPizzaSize(pizzaSize);
+        setNumberOfToppings(numberOfToppings);
+    }
+
 
     // Getter Methods
 
@@ -32,7 +39,7 @@ public class OrderDetails implements java.io.Serializable {
         return customerName;
     }
 
-    public int getCustomerPhone() {
+    public long getCustomerPhone() {
         return customerPhone;
     }
 
@@ -71,6 +78,10 @@ public class OrderDetails implements java.io.Serializable {
         return extraCheese;
     }
 
+    public int getNumberOfToppings() {
+        return numberOfToppings;
+    }
+
 
     // toppings will be sent in a boolean (true or false) will need to write logic(in a method?) to convert to string. i.e. if checkbox1 is true then pepperoni is on pizza.
 
@@ -81,7 +92,7 @@ public class OrderDetails implements java.io.Serializable {
         this.customerName = customerName;
     }
 
-    public void setCustomerPhone(int customerPhone) {
+    public void setCustomerPhone(long customerPhone) {
         this.customerPhone = customerPhone;
     }
 
@@ -121,10 +132,33 @@ public class OrderDetails implements java.io.Serializable {
         this.extraCheese = extraCheese;
     }
 
+    public void setNumberOfToppings(int numberOfToppings) {
+        this.numberOfToppings = numberOfToppings;
+    }
 
-    // TODO figure out best way to store toppings? array or array list? what will the getter/setter look like.
-    // Setter Methods
+
+    // TODO method to print relevant order details in textview.
+
     // TODO method for calculating the order price. each topping needs a price and size
+    public double calculateTotal(String pizzaSize, int numberOfToppings) {
+        double totalCost = 0.0;
+        double numberOfToppingsDouble = numberOfToppings;
+
+        if (pizzaSize.equals("small")) {
+            totalCost += 10.0;
+
+        } else if (pizzaSize.equals("medium")) {
+            totalCost += 15.0;
+        } else if (pizzaSize.equals("large")) {
+            totalCost += 20.0;
+        }
+        System.out.println(totalCost);
+        System.out.println(numberOfToppingsDouble);
+        totalCost += numberOfToppingsDouble * 1.5;
+        System.out.println(totalCost);
+
+        return totalCost;
+    }
 
 
 }
