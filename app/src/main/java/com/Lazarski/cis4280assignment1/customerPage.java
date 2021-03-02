@@ -1,6 +1,7 @@
 package com.Lazarski.cis4280assignment1;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,10 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class customerPage extends AppCompatActivity {
 
-
+    private final String TAG = "Lifecycle";
 
     private String size = "";
-    private String outputString = "";
     boolean pepperoni;
     boolean chicken;
     boolean mushroom;
@@ -35,14 +35,10 @@ public class customerPage extends AppCompatActivity {
 
     String name = "";
     String phoneNumberString = "";
-    //int phoneNumberInt = 0;
     String email = "";
     String address = "";
-    Button submitButton;
 
     private int numberOfToppings = 0;
-
-    //String[] toppingsArray = {"Pepperoni", "Chicken", "Mushroom", "GreenPepper", "Olive", "ExtraCheese"};
 
     EditText editTextName;
     EditText editTextPhoneNumber;
@@ -50,36 +46,28 @@ public class customerPage extends AppCompatActivity {
     EditText editTextAddress;
 
 
-    TextView outputTextView;
 
     OrderDetails orderDetailsInstance;
-    private View view;
-
+    TextView outputTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_page);
-        outputTextView = findViewById(R.id.outputTextView);
-        //name = (EditText) findViewById(R.id.editTextCustomerName);
-        //toppingCheckbox1 = (CheckBox) findViewById(R.id.checkBoxPepperoni);
-        //binding editTextName Object to corresponding UI element.
+        Log.d(TAG, "onCreate");
 
+         outputTextView = findViewById(R.id.outputTextView);
+
+        // binding editTextName Object to corresponding UI element.
         editTextName = findViewById(R.id.editTextCustomerName);
         editTextPhoneNumber = findViewById(R.id.editTextCustomerPhone);
-        System.out.println(editTextPhoneNumber.toString());
-
         editTextEmail = findViewById(R.id.editTextCustomerEmail);
         editTextAddress = findViewById(R.id.editTextCustomerAddress);
 
         System.out.println("We are on the customer page!");
 
-
         // Get the Intent that Started this activity and extract the instance of the OrderDetails class. (old extract the string)
-        //Serializable intent = getIntent().getSerializableExtra("OrderDetails");
-
         orderDetailsInstance = (OrderDetails) getIntent().getSerializableExtra("serializable");
-        //name = orderDetailsInstance.getCustomerName();
         size = orderDetailsInstance.getPizzaSize();
 
         System.out.println("Pizza Size from main activity: " + size);
@@ -145,26 +133,39 @@ public class customerPage extends AppCompatActivity {
         System.out.println("orderDetails number of toppings " + orderDetailsInstance.getNumberOfToppings());
 
         orderDetailsInstance.calculateTotal(size, numberOfToppings);
-
-
-
-        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        //int checked;
-        //int pizzaSizeInt = intent.getIntExtra("checked",0);
-
-        //System.out.println(pizzaSizeInt);
-
-
-
-
-        //Capture the layout's TextView and set the string as its text
-        //TextView textView = findViewById(R.id.textView4);
-        //textView.setText(message);
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume");
+    }
 
     public void submit(View view) {
-        this.view = view;
         // Hides the keyboard on submit.
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -173,10 +174,6 @@ public class customerPage extends AppCompatActivity {
         // Makes image visible
         ImageView img= findViewById(R.id.imageView1);
         img.setVisibility(View.VISIBLE);
-
-
-
-
 
         // Convert EditTextView to string/int variables
         name = editTextName.getText().toString();
@@ -204,7 +201,7 @@ public class customerPage extends AppCompatActivity {
         // Populate outputTextView with order details.
 
 
-        outputString = str1 + str2 + str3 + str4 + str5 + t1 + t2 + t3 + t4 + t5 + t6 + "Size: " + orderDetailsInstance.getPizzaSize() + "\n Order total: $" + orderDetailsInstance.calculateTotal(size, numberOfToppings);
+        String outputString = str1 + str2 + str3 + str4 + str5 + t1 + t2 + t3 + t4 + t5 + t6 + "Size: " + orderDetailsInstance.getPizzaSize() + "\n Order total: $" + orderDetailsInstance.calculateTotal(size, numberOfToppings);
 
 
 
